@@ -7,6 +7,22 @@
 
     import categorias from '$lib/json/categorias.json';
     import Categoria from '$lib/components/Categoria.svelte';
+    import Tag from '$lib/components/Tag.svelte';
+    import Rodape from '$lib/components/Rodape.svelte';
+    
+    let minhaLista: string[] = [];
+
+    function adicionarIngrediente(evento: CustomEvent<string>) {
+        const ingrediente = evento.detail;
+        minhaLista = [...minhaLista, ingrediente];
+    }
+
+    function removerIngrediente(evento: CustomEvent<string>) {
+        const ingrediente = evento.detail;
+        minhaLista = minhaLista.filter(
+            (item) => item !== ingrediente
+        );
+    }
 </script>
 
 <svelte:head>
@@ -17,12 +33,14 @@
     <Cabecalho />
     
     <div class="estilo-principal">
-        <div class="minha-lista-container">
-            <MinhaLista />
+        {#if minhaLista.length}
+            <div class="minha-lista-container">
+                <MinhaLista ingredientes={minhaLista} />
 
-            <div class="divisoria"></div>
-        </div>
-
+                <div class="divisoria"></div>
+            </div>
+        {/if}
+        
         <main>
             <Titulo tag='h1'>Ingredientes</Titulo>
 
@@ -34,12 +52,24 @@
             <ul class="categorias">
                 {#each categorias as categoria (categoria.nome)}
                     <li>
-                        <Categoria {categoria} />
+                        <Categoria
+                            {categoria}
+                            on:adicionarIngrediente={adicionarIngrediente}
+                            on:removerIngrediente={removerIngrediente}
+                        />
                     </li>
                 {/each}
             </ul>
+
+            <div class="buscar-receitas">
+                <a href="/receitas">
+                    <Tag ativa={true} tamanho="lg">Buscar Receitas!</Tag>
+                </a>
+            </div>
         </main>
     </div>
+
+    <Rodape />
 </div>
 
 <style>
@@ -81,5 +111,10 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
+    }
+
+    .buscar-receitas {
+        display: flex;
+        justify-content: center;
     }
 </style>

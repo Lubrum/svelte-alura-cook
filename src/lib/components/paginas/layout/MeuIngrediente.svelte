@@ -21,9 +21,9 @@
         {ingrediente}
     </Tag>
 
-    <span class="remover" on:click={removerIngrediente}>
+    <button class="remover" on:click={removerIngrediente}>
         Remover
-    </span>
+    </button>
 </div>
 
 <style>

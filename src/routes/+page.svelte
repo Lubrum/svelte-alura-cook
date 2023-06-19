@@ -11,7 +11,7 @@
     $: listaVazia = $minhaLista.length === 0;
 
     beforeNavigate((navigation) => {
-        if (listaVazia && navigation.to?.pathname === '/receitas') {
+        if (listaVazia && navigation.to?.route.id === '/receitas') {
             navigation.cancel();
         }
     })

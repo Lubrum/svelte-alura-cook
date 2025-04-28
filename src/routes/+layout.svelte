@@ -16,7 +16,7 @@
             <div class="minha-lista-container">
                 <MinhaLista />
 
-                <div class="divisoria" />
+                <div class="divisoria"></div>
             </div>
         {/if}
 

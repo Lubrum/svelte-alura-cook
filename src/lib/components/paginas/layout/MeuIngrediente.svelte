@@ -17,7 +17,7 @@
     transition:fade={{ duration: 200 }}
 >
     <Tag ativa={true}>
-        <button class="close" on:click={removerIngrediente}></button>
+        <button aria-label="Remover Ingrediente" class="close" on:click={removerIngrediente}></button>
         {ingrediente}
     </Tag>
 

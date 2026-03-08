@@ -1,6 +1,6 @@
 # Svelte Alura Cook
 
-[![Live App](https://img.shields.io/badge/Live%20App-Vercel-black?logo=vercel)](svelte-alura-cook.vercel.app)
+[![Live App](https://img.shields.io/badge/Live%20App-Vercel-black?logo=vercel)](https://svelte-alura-cook.vercel.app)
 ![Svelte](https://img.shields.io/badge/Svelte-Frontend-orange?logo=svelte)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![Node](https://img.shields.io/badge/node.js-runtime-green)

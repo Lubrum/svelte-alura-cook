@@ -2,160 +2,77 @@
 
 [![Live App](https://img.shields.io/badge/Live%20App-Vercel-black?logo=vercel)](https://svelte-alura-cook.vercel.app)
 ![Svelte](https://img.shields.io/badge/Svelte-Frontend-orange?logo=svelte)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![Node](https://img.shields.io/badge/node.js-runtime-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?logo=typescript)
+![Node](https://img.shields.io/badge/Node.js-LTS-green?logo=node.js)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-Aplicação web desenvolvida com **Svelte / SvelteKit** baseada no projeto **Alura Cook**.
+Aplicação web desenvolvida com **SvelteKit** baseada no projeto **Alura Cook**.
+O app permite selecionar ingredientes disponíveis e encontrar receitas que podem ser preparadas com eles.
 
-O sistema permite selecionar ingredientes e descobrir quais receitas podem ser preparadas com eles.
-
-Este projeto foi desenvolvido como prática de **componentização, gerenciamento de estado com stores e navegação entre páginas**.
-
-
-🚀 **Live Demo**  
-
-https://svelte-alura-cook.vercel.app  
-
-
----
-
-# Preview
+## Preview
 
 ![Application Preview](docs/preview.png)
 
----
+## Funcionalidades
 
-# Tecnologias utilizadas
+- Seleção e remoção de ingredientes
+- Lista compartilhada entre páginas com Svelte store
+- Busca de receitas compatíveis com todos os ingredientes escolhidos
+- Bloqueio da busca quando a lista está vazia
+- Interface responsiva construída com componentes Svelte
 
-* Svelte
-* SvelteKit
-* JavaScript
-* HTML
-* CSS
-* Node.js
+## Tecnologias
 
----
+- Svelte 5
+- SvelteKit 2
+- Vite 8
+- TypeScript
+- CSS
+- Node.js LTS
 
-# Funcionalidades
+## Como executar
 
-* Seleção de ingredientes
-* Remoção de ingredientes da lista
-* Busca de receitas com base nos ingredientes escolhidos
-* Navegação entre páginas
-* Gerenciamento de estado com **Svelte store**
-
----
-
-# Arquitetura da aplicação
-
-```
-Browser
-   |
-   v
-Svelte Components
-   |
-   v
-Store (State Management)
-   |
-   v
-Recipe Logic
-```
-
-A aplicação utiliza **stores do Svelte** para compartilhar estado entre múltiplos componentes da interface.
-
----
-
-# Como executar o projeto
-
-## 1 - Clonar o repositório
-
-```bash
-git clone https://github.com/Lubrum/svelte-alura-cook.git
-cd svelte-alura-cook
-```
-
----
-
-## 2 - Instalar dependências
+Instale as dependências:
 
 ```bash
 npm install
 ```
 
-ou
-
-```bash
-yarn install
-```
-
----
-
-## 3 - Executar o projeto
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
 ```
 
-ou
+A aplicação ficará disponível em `http://localhost:5173`.
+
+## Scripts
 
 ```bash
-yarn dev
-```
-
-A aplicação ficará disponível em:
-
-```
-http://localhost:5173
-```
-
----
-
-# Build para produção
-
-```bash
+npm run check
 npm run build
+npm run preview
 ```
 
----
+## Estrutura
 
-# Estrutura do projeto
-
-```
+```text
 src
- ├── components
- ├── routes
- ├── stores
- ├── styles
- └── main.js
+├── lib
+│   ├── components
+│   ├── interfaces
+│   ├── json
+│   └── stores
+└── routes
 ```
 
----
-
-# Conceitos demonstrados
-
-Este projeto demonstra conceitos importantes do ecossistema Svelte:
-
-* componentização
-* estado global com **store**
-* comunicação entre componentes
-* navegação entre páginas
-* organização de projetos frontend
-
----
-
-# Autor
+## Autor
 
 Luciano Brum
 
-GitHub
-https://github.com/Lubrum
+- GitHub: https://github.com/Lubrum
+- Website: https://lubrum.github.io
 
-Website
-https://lubrum.github.io
+## Licença
 
----
-
-# Licença
-
-Este projeto está licenciado sob a **MIT License**.
+Este projeto está licenciado sob a MIT License.

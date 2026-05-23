@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Receita from "$lib/components/paginas/receitas/Receita.svelte";
     import Titulo from "$lib/components/compartilhados/Titulo.svelte";
 
@@ -7,9 +7,10 @@
     import { minhaLista } from "$lib/stores/minhaLista";
     import TagLink from "$lib/components/compartilhados/TagLink.svelte";
 
+    $: ingredientesSelecionados = new Set($minhaLista);
     $: receitasFiltradas = receitas.filter((receita) => (
         receita.ingredientes.every((ingrediente) => (
-            $minhaLista.includes(ingrediente)
+            ingredientesSelecionados.has(ingrediente)
         ))
     ));
 </script>

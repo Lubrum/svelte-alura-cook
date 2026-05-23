@@ -8,11 +8,7 @@
     $: selecionado = $minhaLista.includes(ingrediente);
 
     function aoClicar() {
-        if (!selecionado) {
-            minhaLista.adicionarIngrediente(ingrediente);
-        } else {
-            minhaLista.removerIngrediente(ingrediente);
-        }
+        minhaLista.alternarIngrediente(ingrediente);
     }
 </script>
 
